@@ -3,6 +3,7 @@ Pillow
 py-getch==1.0.1
 PyAutoGUI==0.9.50
 pygame
+platformdirs
 PyGetWindow==0.0.8
 PyMsgBox==1.0.7
 pynput==1.6.8

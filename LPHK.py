@@ -38,15 +38,10 @@ def get_first_textfile_line(file_path):
     first_line = file_lines[0]
     return first_line.strip()
 
+from platformdirs import *
 
-USERPATH_FILE = os.path.join(PATH, "USERPATH")
-if os.path.exists(USERPATH_FILE):
-    IS_PORTABLE = False
-    USER_PATH = get_first_textfile_line(USERPATH_FILE)
-    os.makedirs(USER_PATH, exist_ok=True)
-else:
-    IS_PORTABLE = True
-    USER_PATH = PROG_PATH
+IS_PORTABLE = False
+USER_PATH = user_data_dir("LPHK", "io.github.clafter", ensure_exists=True)
 
 # Get program version
 VERSION = get_first_textfile_line(os.path.join(PATH, "VERSION"))
